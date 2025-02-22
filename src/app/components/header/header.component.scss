@@ -1,0 +1,81 @@
+.container {
+    background-color: transparent;
+    width: 100%;
+    height: 6rem;
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    .container-background {
+        display: flex;
+        width: 100%;
+        height: 4rem;
+        background-color: var(--color-primary);
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .links {
+        height: 100%;
+        margin-left: 2rem;
+
+        ul {
+            display: flex;
+            gap: 5rem;
+            list-style-type: none;
+            height: 100%;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+
+            li {
+                color: var(--color-bg);
+                font-size: 1em;
+                font-family: 'Open Sans';
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-right: 2rem;
+
+        ng-icon {
+            width: 25px;
+            height: 25px;
+            color: var(--color-bg);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .image-container {
+        position: absolute;
+        top: 52.5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+
+        img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div class="container-background">
+        <div class="links">
+            <ul>
+                <li (click)="redirectTo('/menu')">Cardápio</li>
+                <li (click)="redirectTo('/faq')">Perguntas Frequentes</li>
+                <li (click)="redirectTo('/about-us')">Sobre nós</li>
+            </ul>
+        </div>
+
+        <div class="social-links">
+            <ng-icon name="bootstrapInstagram" />
+            <ng-icon name="bootstrapFacebook" />
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img (click)="redirectTo('/home')" src="/images/pizza-master-logo-round.png" alt="pizzaria-logo">
+    </div>
+
+</div>

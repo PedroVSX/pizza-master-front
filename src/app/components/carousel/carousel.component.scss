@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    height: 30rem;
+    
+    swiper-container {
+        width: 100%;
+        height: 30rem;
+        --swiper-theme-color: var(--color-secondary);
+
+        swiper-slide {
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

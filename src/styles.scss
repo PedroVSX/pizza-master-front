@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --color-primary-hex: #E63946;
+    --color-primary: rgb(230, 57, 70);
+
+    --color-secondary-hex: #A41623;
+    --color-secondary: rgb(164, 22, 35);
+
+    --color-tertiary-hex: #F77F00;
+    --color-tertiary: rgb(247, 127, 0);
+
+    --color-quaternary-hex: #6A4C32;
+    --color-quaternary: rgb(106, 76, 50);
+
+    --color-bg-hex: #F4F1DE;
+    --color-bg: rgb(244, 241, 222);
+}
+
+html, body { height: 100%; background-color: var(--color-bg); }
+body { margin: 0; }
