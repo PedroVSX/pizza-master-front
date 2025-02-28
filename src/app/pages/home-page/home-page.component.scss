@@ -7,11 +7,104 @@
         margin: 6rem 0 1rem 0;
 
         .pizza-master {
-            color: var(--color-secondary);
+            color: var(--color-primary);
             font-family: 'Bebas Neue';
             text-align: center;
             font-size: 3rem;
             margin: 0;
+            user-select: none;
+        }
+
+        .section-title {
+            color: var(--color-quintenary);
+            font-family: 'Bebas Neue';
+            text-align: center;
+            font-size: 3rem;
+            margin: 2rem 0 0 0;
+            user-select: none;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .menu-columns-container {
+                display: flex;
+                width: 100%;
+                gap: 5rem;
+
+                .menu-card-container {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    background-image: url(../../../../public/images/pizza-images/pizza-cardapio-background.jpeg);
+                    width: 20%;
+                    background-size: cover;
+                    background-position: center;
+                    min-height: 500px;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-radius: 10px;
+                    padding: 2rem;
+                    margin-left: 2rem;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.8);
+                        border-radius: 10px;
+                        pointer-events: none;
+                    }
+
+                    p {
+                        position: relative;
+                        font-family: 'Open Sans';
+                        font-size: 1em;
+                        text-align: center;
+                        color: var(--color-primary);
+                        margin: 0;
+                        user-select: none;
+                    }
+
+                    .menu-button {
+                        position: relative;
+                        width: 150px;
+                        height: 50px;
+                        background-color: var(--color-secondary);
+                        color: var(--color-bg);
+                        font-family: 'Open Sans';
+                        border: 0;
+                        border-radius: 10px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: var(--color-quaternary);
+                        }
+                    }
+                }
+
+                .product-carousel-container {
+                    width: 80%;
+                    background-color: gray;
+                    margin-right: 2rem;
+                }
+            }
+        }
+
+        .reviews-container {
+
+        }
+
+        .review-form-container {
+
+            .form {
+                
+            }
         }
     }
 }

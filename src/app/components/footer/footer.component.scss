@@ -10,6 +10,7 @@
         display: flex;
         height: 100%;
         align-items: center;
+        user-select: none;
     }
 
     .left {
@@ -43,6 +44,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            user-select: none;
 
             h1 {
                 font-family: 'Bebas Neue';

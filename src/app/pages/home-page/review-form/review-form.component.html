@@ -1,0 +1,21 @@
+<div class="form">
+    <form>
+        <label for="fname">Digite seu nome</label>
+        <input type="text" id="fname" name="fname" [(ngModel)]="name"><br>
+
+        <label>Dê a sua avaliação!</label>
+        <div class="stars">
+            <span
+                *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+                class="star"
+                [ngClass]="{ 'active': star <= rating }"
+                (click)="setRating(star)"
+            >
+                &#9733;
+            </span>
+        </div>
+
+        <label for="fcomment">Descreva sua avaliação (opcional)</label>
+        <textarea name="fcomment" id="fcomment" [(ngModel)]="comment"></textarea>
+    </form>
+</div>
