@@ -49,13 +49,17 @@
 
             .star {
                 font-size: 2em;
-                color: #ccc;
+                color: #bbb;
                 cursor: pointer;
-                transition: color 0.2s ease;
+                transition: color 1s ease;
+                transition: transform 0.1s ease;
 
-                &:hover,
                 &.active {
-                    color: #ffcc00;
+                    color: var(--color-yellow);
+                }
+
+                &:hover {
+                    transform: scale(1.1);
                 }
             }
         }
