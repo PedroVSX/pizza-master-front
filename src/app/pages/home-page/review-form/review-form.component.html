@@ -1,21 +1,37 @@
 <div class="form">
-    <form>
-        <label for="fname">Digite seu nome</label>
-        <input type="text" id="fname" name="fname" [(ngModel)]="name"><br>
+    <form (ngSubmit)="submitForm()">
+        <div class="name-field">
+            <label for="fname">Digite seu nome</label>
+            <input type="text" id="fname" name="fname" [(ngModel)]="name">
 
-        <label>Dê a sua avaliação!</label>
-        <div class="stars">
-            <span
-                *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
-                class="star"
-                [ngClass]="{ 'active': star <= rating }"
-                (click)="setRating(star)"
-            >
-                &#9733;
-            </span>
+            <div *ngIf="showNameError" class="error-message">
+                Por favor, insira um nome para avaliar.
+            </div>
         </div>
 
-        <label for="fcomment">Descreva sua avaliação (opcional)</label>
-        <textarea name="fcomment" id="fcomment" [(ngModel)]="comment"></textarea>
+        <div class="star-rating">
+            <label>Dê a sua avaliação!</label>
+            <div class="stars">
+                <span
+                    *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+                    class="star"
+                    [ngClass]="{ 'active': star <= rating }"
+                    (click)="setRating(star)"
+                >
+                    &#9733;
+                </span>
+            </div>
+
+            <div *ngIf="showRatingError" class="error-message">
+                Por favor, selecione pelo menos 1 estrela para avaliar.
+            </div>
+        </div>
+
+        <div class="comment-field">
+            <label for="fcomment">Descreva sua avaliação (opcional)</label>
+            <textarea name="fcomment" id="fcomment" [(ngModel)]="comment"></textarea>
+        </div>
+
+        <button class="submit-button" type="submit">Enviar avaliação</button>
     </form>
 </div>
