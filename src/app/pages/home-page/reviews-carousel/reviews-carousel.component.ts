@@ -36,6 +36,11 @@ export class ReviewsCarouselComponent {
       name: 'Carlos',
       rating: 4,
       comment: 'Sabor excelente, mas o preço é um pouco salgado.'
+    },
+    {
+      name: 'Sofia',
+      rating: 5,
+      comment: 'Pizza perfeita, entrega rápida e atendimento excelente. Recomendo!'
     }
   ];
 }

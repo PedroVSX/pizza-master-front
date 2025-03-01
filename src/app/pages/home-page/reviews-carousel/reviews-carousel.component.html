@@ -1,5 +1,5 @@
 <div class="container">
-    <swiper-container speed="500" slides-per-view="5">
+    <swiper-container speed="500" slides-per-view="5" space-between="100" slides-offset-before="32" slides-offset-after="96">
         <swiper-slide *ngFor="let review of reviews">
             <app-user-review [review]="review"/>
         </swiper-slide>
