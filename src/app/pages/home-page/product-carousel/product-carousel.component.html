@@ -1,6 +1,8 @@
 <swiper-container class="mySwiper" pagination="true" pagination-clickable="true"
     navigation="true" space-between="30" loop="true">
-    <swiper-slide *ngFor="let product of products">
+    <swiper-slide><app-product-card/></swiper-slide>
+
+    <!--swiper-slide *ngFor="let product of products">
         <app-product-card [product]="product"/>
-    </swiper-slide>
+    </swiper-slide-->
 </swiper-container>
