@@ -1,0 +1,19 @@
+<mat-dialog-content>
+    <!-- Botão de fechar no canto superior direito -->
+    <button mat-icon-button class="close-button" (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  
+    <!-- Conteúdo do pop-up -->
+    <img [src]="data.image" [alt]="data.name" class="dialog-image">
+    <h2 class="dialog-title">{{ data.name }}</h2>
+    <div class="dialog-details">
+      <p>R$ {{ data.price }}</p>
+    </div>
+    <p class="dialog-description">{{ data.description }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button (click)="closeDialog()" class="close-button">Fechar</button>
+    <button mat-button color="primary" (click)="addToCart(data)" class="add-to-cart-button">Adicionar ao Carrinho</button>
+</mat-dialog-actions>

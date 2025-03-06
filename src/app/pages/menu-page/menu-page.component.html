@@ -5,7 +5,11 @@
 
     <main>
         <div class="content">
-            
+            <div class="products-grid">
+                <div class="product-card-wrapper" *ngFor="let product of products">
+                    <app-menu-product-card [product]="product"/>
+                </div>
+            </div>
         </div>
     </main>
 

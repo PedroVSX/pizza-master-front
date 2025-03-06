@@ -1,0 +1,83 @@
+mat-dialog-content {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: none !important;
+
+    .close-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        padding: 8px;
+
+        mat-icon {
+            color: #333;
+        }
+    }
+
+    .dialog-image {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        object-position: 0% 60%;
+    }
+
+    .dialog-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 16px 16px 8px 16px;
+        text-align: center;
+        color: #333;
+    }
+
+    .dialog-details {
+        text-align: center;
+        margin: 8px 16px;
+
+        p {
+            margin: 4px 0;
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--color-secondary);
+        }
+    }
+
+    .dialog-description {
+        margin: 8px 16px;
+        text-align: center;
+        color: #555;
+    }
+}
+
+mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-top: 1px solid #ddd;
+    margin: 0;
+
+    button {
+        border-radius: 10px;
+        color: var(--color-secondary);
+
+        &:active {
+            background-color: rgba(186, 31, 47, 0.5);
+        }
+    }
+
+    button[color="primary"] {
+        background-color: var(--color-secondary);
+        border-radius: 10px;
+        color: white;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: var(--color-tertiary);
+        }
+    }
+}
