@@ -5,6 +5,7 @@ import { CarouselComponent } from "../../components/carousel/carousel.component"
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
 import { ReviewsCarouselComponent } from './reviews-carousel/reviews-carousel.component';
 import { ReviewFormComponent } from './review-form/review-form.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -14,5 +15,9 @@ import { ReviewFormComponent } from './review-form/review-form.component';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
+  constructor(private router: Router) {}
 
+  redirectTo(path: string) {
+    this.router.navigate([path]);
+  }
 }
