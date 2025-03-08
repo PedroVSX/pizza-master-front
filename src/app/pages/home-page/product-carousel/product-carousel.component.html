@@ -1,8 +1,10 @@
-<swiper-container class="mySwiper" pagination="true" pagination-clickable="true"
-    navigation="true" space-between="30" loop="true">
-    <swiper-slide><app-product-card/></swiper-slide>
+<div class="container">
+    <swiper-container pagination="true" pagination-clickable="true" speed="500"
+        navigation="true" rewind="true" pagination-dynamic-bullets="true">
 
-    <!--swiper-slide *ngFor="let product of products">
-        <app-product-card [product]="product"/>
-    </swiper-slide-->
-</swiper-container>
+        <swiper-slide *ngFor="let product of products">
+            <app-product-card [product]="product"/>
+        </swiper-slide>
+
+    </swiper-container>
+</div>

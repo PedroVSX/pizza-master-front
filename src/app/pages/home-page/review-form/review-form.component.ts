@@ -32,7 +32,11 @@ export class ReviewFormComponent {
       comment: this.comment
     };
 
-    console.log(review);
+    console.log(review); // Sending to Back-End
+
+    this.rating = 0;
+    this.name = '';
+    this.comment = '';
   }
 
   hasErrors(): boolean {
