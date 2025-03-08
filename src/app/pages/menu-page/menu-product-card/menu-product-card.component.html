@@ -1,0 +1,21 @@
+<div class="container" (click)="openProductDialog()">
+    <div class="image">
+        <img [src]="product.image" [alt]="product.title">        
+    </div>
+
+    <div class="pizza-info-container">
+        <div class="title">
+            <p>{{ product.name }}</p>
+        </div>
+    
+        <div class="columns-container">
+            <div class="price">
+                <p>R$ {{ product.price }}</p>
+            </div>
+    
+            <div class="buy-button">
+                <button type="button" (click)="$event.stopPropagation(); addToCart(product)">Peça Já!</button>
+            </div>
+        </div>     
+    </div>
+</div>
