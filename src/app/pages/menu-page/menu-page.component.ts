@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from '../../components/footer/footer.component';
 import { MenuProductCardComponent } from './menu-product-card/menu-product-card.component';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { bootstrapCart3 } from '@ng-icons/bootstrap-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-page',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent, MenuProductCardComponent],
+  imports: [CommonModule, HeaderComponent, FooterComponent, MenuProductCardComponent, NgIcon],
+  viewProviders: [provideIcons({ bootstrapCart3 })],
   templateUrl: './menu-page.component.html',
   styleUrl: './menu-page.component.scss'
 })
@@ -42,4 +46,10 @@ export class MenuPageComponent {
       image: 'https://i.imgur.com/QfKK2eF.jpeg'
     }
   ];
+
+  constructor(private router: Router) {}
+
+  redirectTo(path: string) {
+    this.router.navigate([path]);
+  }
 }
