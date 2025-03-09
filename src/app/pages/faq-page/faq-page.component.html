@@ -5,7 +5,17 @@
 
     <main>
         <div class="content">
-            
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <section class="faq-section">
+                <div class="faq-list">
+                    <div class="faq-item" [class.active]="faq.active" *ngFor="let faq of faqs; let i = index" (click)="toggleFAQ(i)">
+                        <div class="faq-question">
+                            {{ faq.question }}
+                        </div>
+                        <div class="faq-answer" [innerHTML]="faq.answer"></div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
