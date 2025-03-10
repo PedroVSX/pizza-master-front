@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     width: 100%;
     height: 100vh;
@@ -10,11 +16,48 @@
         margin-bottom: 2rem;
         place-items: center;
 
+        .title-and-cart {
+            display: flex;
+            color: var(--color-tertiary);
+            margin: 1rem 0 1rem 0;
+            flex-direction: column;
+            align-items: center;
+            
+            .section-title {
+                font-family: 'Bebas Neue';
+                text-align: center;
+                font-size: 3rem;
+                user-select: none;
+            }
+
+            .cart-container {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s ease;
+
+                ng-icon {
+                    font-size: 1.5rem;
+                }
+
+                .cart-text {
+                    font-family: 'Open Sans';
+                    user-select: none;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                }
+            }
+        }
+
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 0 20px 20px 20px;
             max-width: 1600px;
 
             .product-card-wrapper {
