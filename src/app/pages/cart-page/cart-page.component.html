@@ -1,0 +1,46 @@
+<div class="container">
+    <header>
+        <app-header/>
+    </header>
+
+    <div class="content">
+        <h1 class="section-title">Meu Carrinho</h1>
+        <div class="cart-container">
+            <div class="products-container" *ngIf="cartItems.length > 0; else emptyCardTemplate">
+                <div *ngFor="let product of cartItems" class="cart-item">
+                    <img [src]="product.image" [alt]="product.name">
+                    <div class="space">
+                        <div class="info">
+                            <p>{{ product.name }}</p>
+                            <p class="product-price">R$ {{ product.price }}</p>
+                        </div>
+                        <ng-icon name="bootstrapTrash3Fill" (click)="removeItem(product)"></ng-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons" *ngIf="cartItems.length > 0">
+                <button class="clear-button" (click)="clearCart()" *ngIf="cartItems.length > 0">
+                    Esvaziar carrinho
+                </button>
+
+                <button class="proceed-button" [disabled]="cartItems.length === 0">
+                    Seguir para pagamento
+                </button>
+            </div>
+
+            <ng-template #emptyCardTemplate>
+                <div class="empty-cart">
+                    <p>Seu carrinho está vazio!</p>
+                    <button class="menu-button" (click)="redirectTo('/menu')">
+                        Ir para o Cardápio
+                    </button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+    <footer>
+        <app-footer/>
+    </footer>
+</div>
