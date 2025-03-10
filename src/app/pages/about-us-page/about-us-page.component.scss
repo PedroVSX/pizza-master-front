@@ -1,6 +1,93 @@
 .container {
+    height: 100vh;
     
     .content {
         margin-top: 7rem;
+        font-family: 'Open Sans';
+
+        .section-title {
+            font-size: 3rem;
+            font-family: 'Bebas Neue';
+            color: var(--color-tertiary);
+            text-align: center;
+            user-select: none;
+            margin: 0;
+        }
+
+        .text-container {
+            margin: 0 6rem 5rem;
+
+            p {
+                font-size: 20px;
+                color: #333;
+            }
+        }
+
+        .highlight {
+            color: var(--color-tertiary);
+            font-weight: bold;
+        }
+
+        .clarifications-container {
+            margin: 0 6rem 5rem;
+
+            p {
+                font-size: 16px;
+                color: #333;
+            }
+        }
+
+        .socials-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0 2rem;
+
+            .icon-and-text {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                p {
+                    margin: 0;
+                    color: #333;
+                    font-size: 20px;
+                }
+
+                ng-icon {
+                    font-size: 24px;
+                    color: #333;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: var(--color-quaternary);
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    transition: transform 0.3s ease-in-out;
+                }
+        
+                &:hover {
+                    transform: scale(1.05);
+        
+                    ng-icon, p {
+                        color: var(--color-quaternary);
+                    }
+        
+                    &::after {
+                        transform: scaleX(1);
+                        transform-origin: center;
+                    }
+                }
+            }
+        }
     }
 }
