@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { CartService } from '../../../../services/cart.service';
 
 @Component({
   selector: 'app-product-dialog',
@@ -14,7 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
 export class ProductDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<ProductDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private cartService: CartService
   ) {}
 
   closeDialog() {
@@ -22,7 +24,7 @@ export class ProductDialogComponent {
   }
 
   addToCart(product: any) {
-    console.log('Product added to cart: ', product);
+    this.cartService.addToCart(product);
     this.dialogRef.close();
   }
 }

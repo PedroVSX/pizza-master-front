@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-menu-product-card',
@@ -12,7 +13,7 @@ import { ProductDialogComponent } from './product-dialog/product-dialog.componen
 export class MenuProductCardComponent {
   @Input() product: any;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private cartService: CartService, private dialog: MatDialog) {}
 
   openProductDialog() {
     this.dialog.open(ProductDialogComponent, {
@@ -22,6 +23,6 @@ export class MenuProductCardComponent {
   }
 
   addToCart(product: any) {
-    console.log('Product added to cart: ', product);
+    this.cartService.addToCart(product);
   }
 }
