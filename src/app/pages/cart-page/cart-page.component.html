@@ -17,6 +17,10 @@
                         <ng-icon name="bootstrapTrash3Fill" (click)="removeItem(product)"></ng-icon>
                     </div>
                 </div>
+
+                <div class="subtotal">
+                    <p class="text">Subtotal:</p><p class="price">R$ {{ subtotal.toFixed(2) }}</p>
+                </div>
             </div>
 
             <div class="buttons" *ngIf="cartItems.length > 0">
