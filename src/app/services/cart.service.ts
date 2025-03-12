@@ -19,9 +19,17 @@ export class CartService {
   }
 
   removeFromCart(product: any) {
-    const updatedCart = this.getCart().filter(item => item !== product);
-    this.cart.next(updatedCart);
-    this.saveCartToStorage(updatedCart);
+    const currentCart = this.getCart();
+  
+    const indexToRemove = currentCart.findIndex(item => 
+      item.id === product.id && item.price === product.price
+    );
+
+    if (indexToRemove !== -1) {
+      currentCart.splice(indexToRemove, 1);
+      this.cart.next([...currentCart]);
+      this.saveCartToStorage(currentCart);
+    }
   }
 
   clearCart() {

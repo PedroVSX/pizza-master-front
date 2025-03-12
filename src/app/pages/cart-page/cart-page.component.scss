@@ -5,14 +5,14 @@
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 
     .content {
+        flex-grow: 1;
         margin: 7rem 0 2rem 0;
         font-family: 'Open Sans';
-        height: 100vh;
         box-sizing: border-box;
 
         .section-title {
