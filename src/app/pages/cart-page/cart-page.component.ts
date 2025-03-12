@@ -17,12 +17,14 @@ import { Router } from '@angular/router';
 })
 export class CartPageComponent {
   cartItems: any[] = [];
+  subtotal = 0;
 
   constructor(private cartService: CartService, private router: Router) {}
 
   ngOnInit() {
     this.cartService.cart$.subscribe(items => {
-      this.cartItems = items
+      this.cartItems = items;
+      this.calculateSubtotal();
     });
   }
 
@@ -32,6 +34,10 @@ export class CartPageComponent {
 
   clearCart() {
     this.cartService.clearCart();
+  }
+
+  calculateSubtotal() {
+    this.subtotal = this.cartItems.reduce((total, product) => total + product.price, 0);
   }
 
   redirectTo(path: string) {
