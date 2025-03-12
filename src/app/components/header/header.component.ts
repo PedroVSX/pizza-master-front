@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { bootstrapFacebook, bootstrapInstagram } from '@ng-icons/bootstrap-icons'; 
+import { bootstrapFacebook, bootstrapInstagram, bootstrapCart3 } from '@ng-icons/bootstrap-icons'; 
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [NgIcon],
-  viewProviders: [provideIcons({ bootstrapInstagram, bootstrapFacebook })],
+  viewProviders: [provideIcons({ bootstrapInstagram, bootstrapFacebook, bootstrapCart3 })],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
